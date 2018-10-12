@@ -1,6 +1,6 @@
 
 div.container {
-    height: 100%;
+    width: 100vw;
     width: 960px;
 }
 #success_message{ display: none;}
