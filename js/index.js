@@ -1,7 +1,12 @@
   $(document).ready(function() {
-     $('.input-group.date').datepicker({format: "dd.mm.yyyy"}); 
+     $('.input-group.date').datepicker({
+	format: "dd.mm.yyyy",
+	autoclose: true
+}); 
     $('.input-group.time').datetimepicker({
-                    format: 'LT'
+                    format: 'LT',
+			allowInputToggle: true,
+                    showClose: true
                 });
     $('#contact_form').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
@@ -15,9 +20,10 @@
                 validators: {
                         stringLength: {
                         min: 2,
+			 message: 'Bitte gib den Veranstaltungstitel an'
                     },
                         notEmpty: {
-                        message: 'Please supply your first name'
+                        message: 'Bitte gib den Veranstaltungstitel an'
                     }
                 }
             },
@@ -25,9 +31,10 @@
                 validators: {
                      stringLength: {
                         min: 2,
+			message: 'Nenne uns bitte den Veranstaltungsort'
                     },
                     notEmpty: {
-                        message: 'Please supply your last name'
+                        message: 'Nenne uns bitte den Veranstaltungsort'
                     }
                 }
             },
@@ -35,7 +42,7 @@
           typ: {
                 validators: {
                     notEmpty: {
-                        message: 'Please select your state'
+                        message: 'Bitte wähle den Veranstaltungstypen aus'
                     }
                 }
             },
@@ -43,74 +50,67 @@
           datum: {
                 validators: {
                     notEmpty: {
-                        message: 'Please select your state'
+                        message: 'Bitte gib das Datum an'
                     }
                 }
             },
           zeit: {
                 validators: {
                     notEmpty: {
-                        message: 'Please select your state'
+                        message: 'Bitte gib die Uhrzeit an'
                     }
                 }
             },
           
             email: {
                 validators: {
-                    notEmpty: {
-                        message: 'Please supply your email address'
-                    },
-                    emailAddress: {
-                        message: 'Please supply a valid email address'
-                    }
+                   
                 }
             },
             phone: {
                 validators: {
                     notEmpty: {
-                        message: 'Please supply your phone number'
+                        message: 'Bitte gib Deine Telefonnummer an, damit wir Dich bei Nachfragen zu der Veranstalung kontaktieren können'
                     },
-                    phone: {
-                        country: 'DE',
-                        message: 'Please supply a vaild phone number with area code'
-                    }
+                    
                 }
             },
             address: {
                 validators: {
                      stringLength: {
-                        min: 8,
+                        min: 5,
+			message: 'Bitte gib die Adresse ein'
                     },
                     notEmpty: {
-                        message: 'Please supply your street address'
+                        message: 'Bitte gib die Adresse ein'
                     }
                 }
             },
             city: {
                 validators: {
-                     stringLength: {
-                        min: 4,
-                    },
-                    notEmpty: {
-                        message: 'Please supply your city'
-                    }
+                    // stringLength: {
+                      //  min: 4,
+                   // },
+                   // notEmpty: {
+                     //   message: 'Please supply your city'
+                 //   }
                 }
             },
             state: {
                 validators: {
                     notEmpty: {
-                        message: 'Please select your state'
+                        message: 'Wähl das Bundesland aus'
                     }
                 }
             },
             zip: {
                 validators: {
                     notEmpty: {
-                        message: 'Please supply your zip code'
+                        message: 'Bitte Gib die PLZ an'
                     },
                     zipCode: {
-                        country: 'US',
-                        message: 'Please supply a vaild zip code'
+                        country: 'DE',
+                        message: 'Bitte Gib eine gültige PLZ an'
                     }
                 }
             },
@@ -119,10 +119,10 @@
                       stringLength: {
                         min: 10,
                         max: 200,
-                        message:'Please enter at least 10 characters and no more than 200'
+                        message:'Bitte gib mindestens 10 und maximal 200 Buchstaben ein'
                     },
                     notEmpty: {
-                        message: 'Please supply a description of your project'
+                        message: 'Bitte beschreibe Deine Veranstaltung'
                     }
                     }
                 }
