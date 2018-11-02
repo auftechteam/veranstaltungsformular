@@ -65,8 +65,7 @@
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
     <select name="typ" class="form-control selectpicker" >
       <option value=" " >Welche Art von Veranstaltung ?</option>
-      <option>Kennenlerntreffen</option>
-      <option>Stammtisch</option>
+      <option>Veranstaltung</option>
       <option >Aktion</option>
 
     </select>
